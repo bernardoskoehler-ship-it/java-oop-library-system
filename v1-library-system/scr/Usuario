@@ -1,0 +1,18 @@
+abstract class Usuario {
+    String nome;
+
+    Usuario(String nome) {
+        setNome(nome);
+    }
+    private void setNome(String nome) {
+        if(nome != null && !nome.trim().isEmpty()) {
+            this.nome = nome;
+            return;
+        }
+        System.out.println("Nome inserido invalido, nome padrao *NULL* adotado!");
+        this.nome = "NULL";
+    }
+    public String getNome() {
+        return nome;
+    }
+}
