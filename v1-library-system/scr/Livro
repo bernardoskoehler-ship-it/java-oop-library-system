@@ -1,0 +1,33 @@
+public class Livro {
+    private String nome;
+    private boolean disponivel = true;
+    private String nomeDono;
+
+    Livro(String nome) {
+        setNome(nome);
+    }
+    private void setNome(String nome) {
+        if(nome != null && !nome.trim().isEmpty()) {
+            this.nome = nome;
+            return;
+        }
+        System.out.println("Nome inserido invalido, nome padrao *NULL* adotado!");
+        this.nome = "NULL";
+    }
+    public String getNome() {
+        return nome;
+    }
+    public boolean getDisponivel() {
+        return disponivel;
+    }
+    public void alugado(String nome) {
+        disponivel = false;
+        nomeDono = nome;
+    }
+    public void devolvido() {
+        disponivel = true;
+    }
+    public String getNomeDono() {
+        return nomeDono;
+    }
+        }
