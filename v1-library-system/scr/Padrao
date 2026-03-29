@@ -1,0 +1,29 @@
+public class Padrao extends Usuario implements AlugarDevolver {
+    Padrao(String nome) {
+        super(nome);
+    }
+
+    @Override
+    public void alugar(int i) {
+        if(!Biblioteca.lista[i].getDisponivel()) {
+            System.out.println(Biblioteca.lista[i].getNome() +" nao esta disponivel");
+            return;
+        }
+        System.out.println(getNome() +" alugou " +Biblioteca.lista[i].getNome());
+        Biblioteca.lista[i].alugado(getNome());
+    }
+
+    @Override
+    public void devolver(int i) {
+        if(Biblioteca.lista[i].getDisponivel()) {
+            System.out.println(Biblioteca.lista[i].getNome() +" ");
+            return;
+        }
+        if(Biblioteca.lista[i].getNomeDono().equals(getNome())) {
+            System.out.println(getNome() +" devolveu " +Biblioteca.lista[i].getNome());
+            Biblioteca.lista[i].devolvido();
+            return;
+        }
+        System.out.println(Biblioteca.lista[i].getNome() +" nao foi alugado por voce");
+    }
+}
