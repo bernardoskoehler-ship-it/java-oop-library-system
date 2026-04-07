@@ -1,5 +1,3 @@
-# java-oop-library-system
-
 # 📚 Java OOP Library System
 
 A simple library management system built in Java to practice Object-Oriented Programming concepts.
